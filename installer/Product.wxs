@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Ltool" Language="1033" Version="0.1.1" Manufacturer="lilyWhenVia" UpgradeCode="C0F13C5D-445B-46D1-B250-9BA44A5C915D">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perUser" Platform="x64" Description="Ltool Windows launcher and local clipboard history" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of Ltool is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Property Id="ARPURLINFOABOUT" Value="https://github.com/lilyWhenVia/Ltool" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.PayloadDir)\License.rtf" />
+    <UIRef Id="WixUI_Minimal" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="LocalAppDataFolder">
+        <Directory Id="ProgramsDir" Name="Programs">
+          <Directory Id="INSTALLFOLDER" Name="Ltool">
+            <Component Id="App" Guid="6C073C2B-D2E4-46BE-9D57-82E8C4745237" Win64="yes">
+              <File Id="LtoolExe" Source="$(var.PayloadDir)\Ltool.exe" />
+              <RegistryValue Root="HKCU" Key="Software\Ltool\Installer" Name="App" Type="string" Value="0.1.1" KeyPath="yes" />
+              <RemoveFolder Id="RemoveInstallFolder" On="uninstall" /><RemoveFolder Id="RemoveProgramsDir" Directory="ProgramsDir" On="uninstall" />
+            </Component>
+            <Component Id="Config" Guid="9048A917-9BB0-46DC-89C8-5DFCFB59062B" Win64="yes"><File Id="ConfigFile" Source="$(var.PayloadDir)\Ltool.exe.config" /><RegistryValue Root="HKCU" Key="Software\Ltool\Installer" Name="Config" Type="string" Value="0.1.1" KeyPath="yes" /></Component>
+            <Component Id="License" Guid="D6AAB5A4-96D9-442B-87AC-83F5336983FF" Win64="yes"><File Id="LicenseFile" Source="$(var.PayloadDir)\LICENSE" /><RegistryValue Root="HKCU" Key="Software\Ltool\Installer" Name="License" Type="string" Value="0.1.1" KeyPath="yes" /></Component>
+            <Component Id="Notice" Guid="B61EB08F-7912-48FD-870F-4AD3BA221F87" Win64="yes"><File Id="NoticeFile" Source="$(var.PayloadDir)\NOTICE" /><RegistryValue Root="HKCU" Key="Software\Ltool\Installer" Name="Notice" Type="string" Value="0.1.1" KeyPath="yes" /></Component>
+            <Component Id="Readme" Guid="05022E5A-D3B5-47A7-9D90-07BE508078B2" Win64="yes"><File Id="ReadmeFile" Source="$(var.PayloadDir)\README.md" /><RegistryValue Root="HKCU" Key="Software\Ltool\Installer" Name="Readme" Type="string" Value="0.1.1" KeyPath="yes" /></Component>
+            <Component Id="Privacy" Guid="F3CB0666-81EA-4EA2-B195-086C671E752E" Win64="yes"><File Id="PrivacyFile" Source="$(var.PayloadDir)\PRIVACY.md" /><RegistryValue Root="HKCU" Key="Software\Ltool\Installer" Name="Privacy" Type="string" Value="0.1.1" KeyPath="yes" /></Component>
+            <Component Id="Security" Guid="B9C79FF4-8344-4F31-9289-590132C1E4E2" Win64="yes"><File Id="SecurityFile" Source="$(var.PayloadDir)\SECURITY_REVIEW.md" /><RegistryValue Root="HKCU" Key="Software\Ltool\Installer" Name="Security" Type="string" Value="0.1.1" KeyPath="yes" /></Component>
+          </Directory>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="MenuDir" Name="Ltool">
+          <Component Id="MenuShortcut" Guid="C8F65A13-91F9-48E7-AB2E-47AD1EF3C8C1" Win64="yes">
+            <Shortcut Id="StartMenuShortcut" Name="Ltool" Target="[INSTALLFOLDER]Ltool.exe" WorkingDirectory="INSTALLFOLDER" />
+            <RegistryValue Root="HKCU" Key="Software\Ltool\Installer" Name="Menu" Type="integer" Value="1" KeyPath="yes" />
+            <RemoveFolder Id="RemoveMenuFolder" On="uninstall" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="DesktopFolder">
+        <Component Id="DesktopShortcut" Guid="939CA65B-FCAC-4152-80D7-DA329A66A057" Win64="yes">
+          <Shortcut Id="DesktopLink" Name="Ltool" Target="[INSTALLFOLDER]Ltool.exe" WorkingDirectory="INSTALLFOLDER" />
+          <RegistryValue Root="HKCU" Key="Software\Ltool\Installer" Name="Desktop" Type="integer" Value="1" KeyPath="yes" />
+        </Component>
+      </Directory>
+    </Directory>
+    <Feature Id="MainFeature" Title="Ltool" Level="1">
+      <ComponentRef Id="App" /><ComponentRef Id="Config" /><ComponentRef Id="License" /><ComponentRef Id="Notice" /><ComponentRef Id="Readme" /><ComponentRef Id="Privacy" /><ComponentRef Id="Security" /><ComponentRef Id="MenuShortcut" /><ComponentRef Id="DesktopShortcut" />
+    </Feature>
+  </Product>
+</Wix>

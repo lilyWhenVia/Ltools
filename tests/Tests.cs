@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Windows.Forms;
 public static class Tests {
  static int checks;
  static void Check(bool result,string name){if(!result)throw new Exception("FAIL: "+name);Console.WriteLine("PASS: "+name);checks++;}
- [STAThread] public static int Main(){string temp=Path.Combine(Path.GetTempPath(),"LilyTools-Test-"+Guid.NewGuid());Directory.CreateDirectory(temp);string file=Path.Combine(temp,"sample file.txt");File.WriteAllText(file,"test");try{
+ [STAThread] public static int Main(){string temp=Path.Combine(Path.GetTempPath(),"Ltool-Test-"+Guid.NewGuid());Directory.CreateDirectory(temp);string file=Path.Combine(temp,"sample file.txt");File.WriteAllText(file,"test");try{
   Check(Recognition.TypeOf("https://example.com/")=="网址","URL recognition");
   Check(Recognition.TypeOf("javascript:alert(1)")=="文本","non-HTTP scheme is not an open-URL action");
   Check(Recognition.TypeOf("test@example.com")=="邮箱","email recognition");
