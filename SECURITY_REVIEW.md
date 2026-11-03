@@ -4,7 +4,7 @@
 
 ## 版本与安装
 
-Ltools 0.1.2 为原 LilyTools 的更名版。代码公开，非商业用途免费，未经代码签名。官方仓库：https://github.com/lilyWhenVia/Ltools 。
+Ltools 0.1.3 为原 LilyTools 的更名版。代码公开，非商业用途免费，未经代码签名。官方仓库：https://github.com/lilyWhenVia/Ltools 。
 
 本版使用标准 Windows Installer MSI，按当前用户安装至 `%LOCALAPPDATA%\Programs\Ltools`；不提升权限。文件、开始菜单、桌面快捷方式和卸载均由 Windows Installer 管理。MSI 仅使用 Windows Installer 与 WiX 标准界面动作，不包含项目编写的自定义安装动作，不执行安装脚本、不启动程序，不结束其他进程，不自行解压运行 EXE 或复制并启动临时卸载器。
 

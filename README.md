@@ -8,7 +8,7 @@
 
 ## 下载与安装
 
-前往 [最新版本](https://github.com/lilyWhenVia/Ltools/releases/latest)，下载 **Ltools-Setup-0.1.2-windows-x64.msi**，双击后使用标准 Windows Installer 界面安装。
+前往 [最新版本](https://github.com/lilyWhenVia/Ltools/releases/latest)，下载 **Ltools-Setup-0.1.3-windows-x64.msi**，双击后使用标准 Windows Installer 界面安装。
 
 - Windows 10 / 11，64 位；需 .NET Framework 4.8。通常 Windows 10 较新版本及 Windows 11 已具备运行环境。
 - 默认安装到 `%LOCALAPPDATA%\Programs\Ltools`，无需管理员权限。

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="*" Name="Ltools" Language="1033" Version="0.1.2" Manufacturer="lilyWhenVia" UpgradeCode="C0F13C5D-445B-46D1-B250-9BA44A5C915D">
+  <Product Id="*" Name="Ltools" Language="1033" Version="0.1.3" Manufacturer="lilyWhenVia" UpgradeCode="C0F13C5D-445B-46D1-B250-9BA44A5C915D">
     <Package InstallerVersion="500" Compressed="yes" InstallScope="perUser" Platform="x64" Description="Ltools Windows launcher and local clipboard history" />
     <MajorUpgrade DowngradeErrorMessage="A newer version of Ltools is already installed." />
     <MediaTemplate EmbedCab="yes" />
@@ -16,15 +16,15 @@
           <Directory Id="INSTALLFOLDER" Name="Ltools">
             <Component Id="App" Guid="7C2C478D-4EAA-4C2D-8E94-FC03801C8D28" Win64="yes">
               <File Id="LtoolsExe" Source="$(var.PayloadDir)\Ltools.exe" />
-              <RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="App" Type="string" Value="0.1.2" KeyPath="yes" />
+              <RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="App" Type="string" Value="0.1.3" KeyPath="yes" />
               <RemoveFolder Id="RemoveInstallFolder" On="uninstall" /><RemoveFolder Id="RemoveProgramsDir" Directory="ProgramsDir" On="uninstall" />
             </Component>
-            <Component Id="Config" Guid="EAA33110-2B06-4A49-94DA-601FBFD4DD71" Win64="yes"><File Id="ConfigFile" Source="$(var.PayloadDir)\Ltools.exe.config" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="Config" Type="string" Value="0.1.2" KeyPath="yes" /></Component>
-            <Component Id="License" Guid="967E2DE5-E62A-454A-B48E-4F17C3BD022B" Win64="yes"><File Id="LicenseFile" Source="$(var.PayloadDir)\LICENSE" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="License" Type="string" Value="0.1.2" KeyPath="yes" /></Component>
-            <Component Id="Notice" Guid="B9283CB1-7977-4798-B2A7-1B44F6BBF458" Win64="yes"><File Id="NoticeFile" Source="$(var.PayloadDir)\NOTICE" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="Notice" Type="string" Value="0.1.2" KeyPath="yes" /></Component>
-            <Component Id="Readme" Guid="BBC04BE9-9819-4787-B66C-71A92CA07A8C" Win64="yes"><File Id="ReadmeFile" Source="$(var.PayloadDir)\README.md" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="Readme" Type="string" Value="0.1.2" KeyPath="yes" /></Component>
-            <Component Id="Privacy" Guid="DC42133C-3653-4EDF-A304-D571C0E144C7" Win64="yes"><File Id="PrivacyFile" Source="$(var.PayloadDir)\PRIVACY.md" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="Privacy" Type="string" Value="0.1.2" KeyPath="yes" /></Component>
-            <Component Id="Security" Guid="B33B3716-D086-43E6-B753-11FC8908AF65" Win64="yes"><File Id="SecurityFile" Source="$(var.PayloadDir)\SECURITY_REVIEW.md" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="Security" Type="string" Value="0.1.2" KeyPath="yes" /></Component>
+            <Component Id="Config" Guid="EAA33110-2B06-4A49-94DA-601FBFD4DD71" Win64="yes"><File Id="ConfigFile" Source="$(var.PayloadDir)\Ltools.exe.config" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="Config" Type="string" Value="0.1.3" KeyPath="yes" /></Component>
+            <Component Id="License" Guid="967E2DE5-E62A-454A-B48E-4F17C3BD022B" Win64="yes"><File Id="LicenseFile" Source="$(var.PayloadDir)\LICENSE" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="License" Type="string" Value="0.1.3" KeyPath="yes" /></Component>
+            <Component Id="Notice" Guid="B9283CB1-7977-4798-B2A7-1B44F6BBF458" Win64="yes"><File Id="NoticeFile" Source="$(var.PayloadDir)\NOTICE" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="Notice" Type="string" Value="0.1.3" KeyPath="yes" /></Component>
+            <Component Id="Readme" Guid="BBC04BE9-9819-4787-B66C-71A92CA07A8C" Win64="yes"><File Id="ReadmeFile" Source="$(var.PayloadDir)\README.md" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="Readme" Type="string" Value="0.1.3" KeyPath="yes" /></Component>
+            <Component Id="Privacy" Guid="DC42133C-3653-4EDF-A304-D571C0E144C7" Win64="yes"><File Id="PrivacyFile" Source="$(var.PayloadDir)\PRIVACY.md" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="Privacy" Type="string" Value="0.1.3" KeyPath="yes" /></Component>
+            <Component Id="Security" Guid="B33B3716-D086-43E6-B753-11FC8908AF65" Win64="yes"><File Id="SecurityFile" Source="$(var.PayloadDir)\SECURITY_REVIEW.md" /><RegistryValue Root="HKCU" Key="Software\Ltools\Installer" Name="Security" Type="string" Value="0.1.3" KeyPath="yes" /></Component>
           </Directory>
         </Directory>
       </Directory>

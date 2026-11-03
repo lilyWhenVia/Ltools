@@ -1,6 +1,6 @@
-﻿param([string]$Version = '0.1.2')
+﻿param([string]$Version = '0.1.3')
 $ErrorActionPreference = 'Stop'
-if ($Version -notmatch '^\d+\.\d+\.\d+$') { throw 'Version must have the form 0.1.2.' }
+if ($Version -notmatch '^\d+\.\d+\.\d+$') { throw 'Version must have the form 0.1.3.' }
 $root = Split-Path $PSScriptRoot -Parent
 $dist = Join-Path $root 'dist'
 $compiler = Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319\csc.exe'
