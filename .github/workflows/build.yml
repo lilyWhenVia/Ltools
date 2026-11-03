@@ -1,0 +1,27 @@
+name: Windows build
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build application and installer
+        shell: powershell
+        run: .\scripts\build.ps1
+      - name: Test public source
+        shell: powershell
+        run: .\scripts\test.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LilyTools-windows-x64
+          path: |
+            dist/*Setup*.exe
+            dist/*portable.zip
+            dist/SHA256SUMS.txt

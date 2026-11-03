@@ -1,0 +1,11 @@
+dist/
+build/
+*.user
+*.suo
+*.pdb
+*.log
+*.tmp
+history.xml
+search-state.xml
+folders.txt
+ui-*.png
