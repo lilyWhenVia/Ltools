@@ -1,4 +1,6 @@
-﻿# Ltool
+﻿# Ltools
+
+<img src="assets/Ltools.png" alt="Ltools logo" width="80" />
 
 一个轻量的 Windows 搜索入口与本地剪贴板工具。**非商业用途免费，源码公开。**
 
@@ -6,12 +8,12 @@
 
 ## 下载与安装
 
-前往 [最新版本](https://github.com/lilyWhenVia/Ltool/releases/latest)，下载 **Ltool-Setup-0.1.1-windows-x64.msi**，双击后使用标准 Windows Installer 界面安装。
+前往 [最新版本](https://github.com/lilyWhenVia/Ltools/releases/latest)，下载 **Ltools-Setup-0.1.2-windows-x64.msi**，双击后使用标准 Windows Installer 界面安装。
 
 - Windows 10 / 11，64 位；需 .NET Framework 4.8。通常 Windows 10 较新版本及 Windows 11 已具备运行环境。
-- 默认安装到 `%LOCALAPPDATA%\Programs\Ltool`，无需管理员权限。
+- 默认安装到 `%LOCALAPPDATA%\Programs\Ltools`，无需管理员权限。
 - 安装器提供桌面与开始菜单快捷方式，可从 Windows“已安装的应用”卸载。
-- 也可下载便携版 ZIP，解压后运行 `Ltool.exe`；旁边的 `.config` 文件必须保留。
+- 也可下载便携版 ZIP，解压后运行 `Ltools.exe`；旁边的 `.config` 文件必须保留。
 - 安装包目前未购买代码签名证书，Windows 可能提示发布者未知；请核对下载来源与发布页的 SHA-256 校验文件。
 
 ## 能做什么
@@ -20,6 +22,8 @@
 - 识别网址、本地文件路径、邮箱和算式，提供对应操作；支持 `/C:/...` 和 `file:///...` 路径。
 - 保存最近 100 条文本、图片和文件剪贴板记录，图片直接显示缩略图。
 - 紧凑窗口按结果动态展开，支持轻度半透明与多屏 DPI 适配。
+- 统一品牌图标；应用和文件候选读取 Windows 原始图标，并保留类型标签。
+- 从旧版自动迁移历史和图片，历史写入带备份及损坏恢复。
 - 单击执行候选；切换子应用保留输入，标签可用 Backspace 删除，右侧 × 清空搜索。
 
 ## 快捷键
@@ -40,7 +44,7 @@
 
 ## 隐私与限制
 
-历史、图片和搜索设置保存在 `%LOCALAPPDATA%\LilyTools`（兼容旧版历史），**未加密**，复制的敏感信息也可能被记录。程序不自动上传历史；主动选择网页搜索会将对应文字交给浏览器与搜索引擎。详情见 [PRIVACY.md](PRIVACY.md)。
+历史、图片和搜索设置保存在 `%LOCALAPPDATA%\Ltools`，**未加密**，复制的敏感信息也可能被记录。程序不自动上传历史；主动选择网页搜索会将对应文字交给浏览器与搜索引擎。详情见 [PRIVACY.md](PRIVACY.md)。
 
 文件默认索引桌面、文档和 Downloads，可通过托盘菜单添加目录。当前按名称和路径匹配，不支持拼音、文件全文搜索、OCR、插件市场或云同步。索引上限 15000 项、深度 8 层，跳过 `.git`、`node_modules` 与目录链接。
 

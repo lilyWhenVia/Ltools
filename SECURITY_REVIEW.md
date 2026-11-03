@@ -1,12 +1,12 @@
-﻿# Ltool 安全审核说明
+﻿# Ltools 安全审核说明
 
 本文件供终端管理员审核，不是安全认证或白名单申请。现有终端报告仅为“Suspicious activity”，没有规则 ID 或进程事件链，因此无法判断误报，也没有确认新版能被放行。
 
 ## 版本与安装
 
-Ltool 0.1.1 为原 LilyTools 的更名版。代码公开，非商业用途免费，未经代码签名。官方仓库：https://github.com/lilyWhenVia/Ltool 。
+Ltools 0.1.2 为原 LilyTools 的更名版。代码公开，非商业用途免费，未经代码签名。官方仓库：https://github.com/lilyWhenVia/Ltools 。
 
-本版使用标准 Windows Installer MSI，按当前用户安装至 `%LOCALAPPDATA%\Programs\Ltool`；不提升权限。文件、开始菜单、桌面快捷方式和卸载均由 Windows Installer 管理。MSI 仅使用 Windows Installer 与 WiX 标准界面动作，不包含项目编写的自定义安装动作，不执行安装脚本、不启动程序，不结束其他进程，不自行解压运行 EXE 或复制并启动临时卸载器。
+本版使用标准 Windows Installer MSI，按当前用户安装至 `%LOCALAPPDATA%\Programs\Ltools`；不提升权限。文件、开始菜单、桌面快捷方式和卸载均由 Windows Installer 管理。MSI 仅使用 Windows Installer 与 WiX 标准界面动作，不包含项目编写的自定义安装动作，不执行安装脚本、不启动程序，不结束其他进程，不自行解压运行 EXE 或复制并启动临时卸载器。
 
 0.1.0 的自定义 EXE 安装器不再用于新版本。此变更仅为规范安装和可审核性，不代表已定位 Sentinel 告警原因。
 
@@ -14,7 +14,7 @@ Ltool 0.1.1 为原 LilyTools 的更名版。代码公开，非商业用途免费
 
 - `RegisterHotKey` 注册 Alt+Space 和 Ctrl+Shift+V；不使用低级全局键盘钩子，不注入其他进程。
 - `AddClipboardFormatListener` 接收剪贴板更新，将最近 100 条文本、图片和文件列表保存到当前用户本地目录。
-- 兼容旧版数据目录 `%LOCALAPPDATA%\LilyTools`。历史和搜索设置未加密，不自动上传。
+- 数据存于 `%LOCALAPPDATA%\Ltools`，首次运行会从旧版目录复制迁移，并保留原件。历史和搜索设置未加密，不自动上传。
 - 扫描开始菜单、桌面、文档、Downloads 和用户主动添加的目录，建立内存中的名称与路径索引。
 - 用户选择打开文件或网址时，通过系统关联程序启动；选用 EXE 路径会运行该程序。
 - 用户明确按 Ctrl+V 后，使用 `SetForegroundWindow` 尝试回到此前窗口，并通过 `SendKeys` 发送粘贴快捷键。纯文本粘贴操作同样需要用户明确选择。

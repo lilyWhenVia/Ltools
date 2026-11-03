@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
 $destination = Join-Path $root 'build\wix'
 $zip = Join-Path $env:TEMP 'ltool-wix-3.14.1.zip'
